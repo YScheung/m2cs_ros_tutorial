@@ -20,8 +20,7 @@ def callback(data):
     if (data.hat_ly != 0):
         t = Twist()
         speed = data.hat_ly
-        t.linear.x = speed * count * 0.44 # let constant k be 2
-        #t.linear.x = speed
+        t.linear.x = speed * count * 0.44 
         pub.publish(t)
 
     if (data.l3 == True):
@@ -56,20 +55,15 @@ def callback(data):
         pub.publish(t) 
     
 
-    #if data.square == pressed ...... 
-
- 
-
     # you should publish the velocity here
 
     # hint: to detect a button being pressed, you can use the following pseudocode:
     #
-    # if ((data.button is pressed) and (old_data.button not pressed)),
-    # then do something...
-    #if (data.cross == True) and (old_square.button not pressed)):
 
     old_data = data
 
+    
+    
 if __name__ == '__main__':
     rospy.init_node('ps4_controller')
 
